@@ -1,0 +1,953 @@
+
+<head>
+	<meta charset="utf-8">
+  	<style type="text/css">
+    /* .outermost{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    } */
+    .wrap{
+      padding-top: 0px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 57;
+      border-bottom: 1px solid #e8e9ed;
+      background-color: #fff;
+      position: fixed;
+    }
+    .header{
+      background:#fff ;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 97.5%;
+      height: 100%;
+    }
+    .header__logo{
+      width: 17%;
+      display: flex;
+      align-items: center;
+    }
+    .header__icon{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 83%;
+      height: 100%;
+    }
+    .header__icon__right{
+      width: 13%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header__icon__right__active{
+      position: relative;
+      height: 100%;
+    }
+    .header__icon__right__active__number{
+      position: absolute;
+      top: -15%;
+      right: -15%;
+      height: 15px;
+      width: 15px;
+      border-radius:50%;
+      color: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .downarea{
+      display: flex;
+      width: 100%;
+      height: 2300px;
+      padding-top: 57;
+    }
+    .downarea__sidebar{
+      border-top: 1px solid #e8e9ed;
+      background: #fff;
+      width:15%;
+      height: 100vh;
+      position: fixed;
+    }
+    .downarea__sidebar__content{
+      display: flex;
+      justify-content: center;
+      width: 100%; 
+      height: 4.8%;
+    }
+    .downarea__sidebar__content__icon{
+      width: 25%;
+      display: flex;
+      align-items: center;
+    }
+    .downarea__sidebar__content__word{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      color: #607d8b;
+    }
+    .downarea__sidebar__content__undertable{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      color: #607d8b;
+    }
+    .downarea__sidebar__content__title{
+      display: flex;
+      align-items: center;
+      width: 85%;
+      color: #41434d;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .downarea__right{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 85%;
+      background-color:#e8e9ef;
+      height: 100%;
+      overflow: scroll;
+      padding-left: 15%;
+    }
+    .downarea__right__content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 90%;
+    }
+    .downarea__right__content__1{
+      display: flex;
+      flex-direction:row;
+      justify-content: space-between;
+      height:100px;
+      width: 95%;
+    }
+    .downarea__right__content__2{
+      height:514px;
+      width: 95%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 5px;
+    }
+    .downarea__right__content__3{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height:478px;
+      width: 95%;
+    }
+    .downarea__right__content__4{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height:463px;
+      width: 95%;
+    }
+    .downarea__right__content__5{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height:347px;
+      width: 95%;
+    }
+    .b{
+      display: flex;
+      width: 23.5%;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .bicon{
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .bword{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .bwordup{
+      font-size: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .bworddown{
+      color: #99abb4;
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    
+    .c2T{
+      width: 100%;
+      height: 5%;
+      display: flex;
+      justify-content: center;
+    }
+    .c2title{
+      display: flex;
+      height: 20%;
+      width: 95%;
+    }
+    .c2info{
+      display: flex;
+      height: 80%;
+      width: 95%;
+      flex-direction: row;
+    }
+    .c2pic{
+      width: 65%;
+      height: 90%;
+      display: flex;
+      justify-content: center;
+    }
+    .c2right{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 90%;
+      width: 35%;
+    }
+    .c2ltop{
+      color:  #868e96;;
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .c2ldown{
+      font-size: 13px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .c2l{
+      height: 10%;
+      background-color: #e9ecef;
+      position: relative;
+      top: 10px;
+    }
+    .c2lcolor{
+      height: 100%;
+      position: absolute;
+    }
+    
+    .c3L{
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .c3left{
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .c3lefttitle{
+      height: 15%;
+      display: flex;
+      align-items: center;
+    }
+    .c3right{
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .c3leftword{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .c3leftTword{
+      background-color: #e8e9ef;
+      color: #868e96;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      height: 10%;
+    }
+    .c3butg{
+      padding: 10px;
+      background: #00c292;
+      color: white;
+      border-radius: .25rem;
+      border-style: solid;
+      border: white;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .c3buto{
+      padding: 10px;
+      background: #fb9678;
+      color: white;
+      border-radius: .25rem;
+      border-style: solid;
+      border: white;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .c3rup{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 45%;
+      width: 100%;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .c3rupword{
+      color: #868e96;
+      font-size: 12px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .c3rdown{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 45%;
+      width: 100%;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .AUGU{
+      background-color: rgb(3, 169, 243);
+      width: 100%;
+      height: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .august{
+      width: 90%;
+      color: white;
+      display: flex;
+    }
+    .c3rdownpic{
+      display: flex;
+      align-items: flex-end;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      width: 100%;
+      height: 75%;
+    }
+    
+    .c4left{
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      width: 48%;
+      height: 100%;
+      border-radius: 5px;
+    }
+    .c4leftT{
+      display: flex;
+      justify-content: center;
+      height: 10%;
+      width: 100%;
+    }
+    .c4lefttitle{
+      display: flex;
+      align-items: flex-end;
+      width: 95%;
+    }
+    .c4todo{
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      width: 100%;
+      height: 80%;
+    }
+    .c4todolist{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 95%;
+      height: 90%;
+    }
+    .c4todolistL{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #99abb4;
+      background-color: #FAFAFA;
+      height: 15%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .c4but{
+      border-style:none;
+      background-color: #FAFAFA;
+    }
+    .c4right{
+      display: flex;
+      justify-content: center;
+      width: 48%;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .c4rightC{
+      width: 95%;
+    }
+    .c4righttitle{
+      display: flex;
+      align-items: center;
+      height: 15%;
+    }
+    .c4inputsend{
+      display: flex;
+      justify-content: space-between;
+      height: 20%;
+      align-items: center;
+    }
+    .c4input{
+      width: 90%;
+      height: 47%;
+      border: 1px solid #eceff1;
+      border-radius: 7px;
+    }
+    .c4Rbut{
+      border-style:none;
+      background-color:white;
+    }
+    
+    .downarea__right__content__5__left{
+      display: flex;
+      justify-content: center;
+      width: 32%;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .c5leftC{
+      
+      width: 95%;
+    }
+    .c5lefttitle{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 15%;
+    }
+    .c5Lbut{
+      border-style:none;
+      background-color: white;
+    }
+    .downarea__right__content__5__mid{
+      display: flex;
+      flex-direction: column;
+      width: 32%;
+      background-color: white;
+      border-radius: 5px;
+    }
+    .c5midbut{
+      width: 100%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+    }
+    .c5midpic{
+      display: flex;
+      align-items: flex-start;
+      height: 50%;
+    }
+    .c5midbutword{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 95%;
+    }
+    .c5midbutwordS{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+    .downarea__right__content__5__right{
+      background-color: white;
+      width: 32%;
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+    }
+    .c5rightC{
+      width: 95%;
+      height: 75%;
+      display: flex;
+      align-items: center;
+    }
+    .contenttitle{
+      font-size: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 700;
+    }
+    .downarea__right__footer{
+      width: 100%;
+      height: 4%;
+      display: flex;
+      justify-content: center;
+
+    }
+    .underT{
+      display: flex;
+      justify-content: center;
+      background-color: white;
+      width: 95%;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .undertitle{
+      display: flex;
+      flex-direction:row;
+      justify-content: space-between;
+      align-items: center;
+      width: 95%;
+      height: 100%;
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #78909c;
+    }
+
+
+  </style>
+</head>
+<body>
+  <html>
+    <div class="outermost">
+      <div class="wrap">
+        <!-- header -->
+        <div class="header">
+          <!-- logo -->
+          <div class="header__logo">
+            <img src="picelement\titlelogo.png"width="145" height="31.34">
+          </div>
+          <!-- icon區塊 -->
+          <div class="header__icon">
+            <div>
+              <img src="picelement\threelineicon.png"width="24" height="24">
+            </div>
+            <div class="header__icon__right">
+              <div><img src="picelement\searchicon.png"></div>
+              <div class="header__icon__right__active">
+                <img src="picelement\notifyicon.png"width='30'height="30">
+                <div class="header__icon__right__active__number" style="background-color: #dc3545!important;">3</div>
+              </div>
+              <div class="header__icon__right__active">
+                <img src="picelement\mailicon.png" width='30'height="30">
+                <div class="header__icon__right__active__number" style="background-color: #007bff!important;">4</div>
+              </div>
+              <div><img src="picelement\photoicon.png"width="45.28" height="40"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 下方區塊 -->
+      <div class="downarea">
+        <!-- sidebar -->
+        <div class="downarea__sidebar">
+          <!-- i1 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\dashboard.png"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word" style="color: #03a9f3;">Dashboard</div>
+          </div>
+          <!-- UI ELEMENTS -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__title">UI ELEMENTS</div>
+          </div>
+          <!-- i2 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\components.jpg"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word"><span>Components</span><img src="picelement\goto.jpg"width="20" height="20"></div>
+          </div>
+          <!-- i3 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\tablesb.png"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word" style="color: #03a9f3;"><span>Tables</span><img src="picelement\downway.jpg"width="20" height="20"></div>
+          </div>
+          <!-- littleT -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"></div>
+            <div class="downarea__sidebar__content__undertable"><img src="picelement\tables.jpg"width="25" height="25"><span>Basic Table</span></div>
+          </div>
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"></div>
+            <div class="downarea__sidebar__content__undertable"><img src="picelement\tables.jpg"width="25" height="25"><span>Data Table</span></div>
+          </div>
+          <!-- i4 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\form.png"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word"><span>Forms</span><img src="picelement\goto.jpg"width="20" height="20"></div>
+          </div>
+          <!-- ICONS -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__title">ICONS</div>
+          </div>
+          <!-- i5 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\icons.jpg"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word"><span>Icons</span><img src="picelement\goto.jpg"width="20" height="20"></div>
+          </div>
+          <!-- i6 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\widgets.jpg"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word"><span>Widgets</span></div>
+          </div>
+          <!-- i7 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\charts.jpg"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word"><span>Charts</span><img src="picelement\goto.jpg"width="20" height="20"></div>
+          </div>
+          <!-- i8 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\maps.jpg"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word"><span>Maps</span><img src="picelement\goto.jpg"width="20" height="20"></div>
+          </div>
+          <!-- EXTRAS -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__title">EXTRAS</div>
+          </div>
+          <!-- i9 -->
+          <div class="downarea__sidebar__content">
+            <div class="downarea__sidebar__content__icon"><img src="picelement\pages.jpg"width="25" height="25"></div>
+            <div class="downarea__sidebar__content__word"><span>Pages</span><img src="picelement\goto.jpg"width="20" height="20"></div>
+          </div>
+        </div>
+        <!-- rightside -->
+        <div class="downarea__right">
+          <!-- content -->
+          <div class="downarea__right__content">
+            <!-- c1 -->
+            <div class="downarea__right__content__1">
+              <!-- b1 -->
+              <div class="b">
+                <div class="bicon"><img src="picelement\revenue.jpg"width="45" height="45"></div>
+                <div class="bword"><span class="bwordup">$23569</span><span class="bworddown">Revenue</span></div>
+              </div>
+              <!-- b2 -->
+              <div class="b">
+                <div class="bicon"><img src="picelement\sales.jpg"width="45" height="45"></div>
+                <div class="bword"><span class="bwordup">3435</span><span class="bworddown">Sales</span></div>
+              </div>
+              <!-- b3 -->
+              <div class="b">
+                <div class="bicon"><img src="picelement\templates.jpg"width="45" height="45"></div>
+                <div class="bword"><span class="bwordup">349</span><span class="bworddown">Templates</span></div>
+              </div>
+              <!-- b4 -->
+              <div class="b">
+                <div class="bicon"><img src="picelement\clients.jpg"width="45" height="45"></div>
+                <div class="bword"><span class="bwordup">2986</span><span class="bworddown">Clients</span></div>
+              </div>
+            </div>
+            <!-- c2 -->
+            <div class="downarea__right__content__2">
+              <div class="c2T">
+                <!-- title -->
+                <div class="contenttitle c2title">Traffic</div>
+              </div>
+              <!-- information -->
+              <div class="c2info">
+                <!-- chart -->
+                <div class="c2pic"><img src="picelement\traffic.jpg"height=100% width="100%"></div>
+                <!-- line -->
+                <div class="c2right">
+                  <!-- l1 -->
+                  <div>
+                    <div class="c2ltop">Visits</div>
+                    <div class="c2ldown">96,930 Users (40%)</div>
+                    <div class="c2l">
+                      <div class="c2lcolor" style="width:40%; background-color: #00c292;"></div>
+                    </div>
+                  </div>
+                  <!-- l2 -->
+                  <div>
+                    <div class="c2ltop">Bounce Rate</div>
+                    <div class="c2ldown">3,220 Users (24%)</div>
+                    <div class="c2l">
+                      <div class="c2lcolor" style="width:24%;background-color: #ab8ce4;"></div>
+                    </div>
+                  </div>
+                  <!-- l3 -->
+                  <div>
+                    <div class="c2ltop">Unique Visitors</div>
+                    <div class="c2ldown">29,658 Users (60%)</div>
+                    <div class="c2l">
+                      <div class="c2lcolor" style="width:60%;background-color: #03a9f3;"></div>
+                    </div>
+                  </div>
+                  <!-- l4 -->
+                  <div>
+                    <div class="c2ltop">Targeted Visitors</div>
+                    <div class="c2ldown">99,658 Users (90%)</div>
+                    <div class="c2l">
+                      <div class="c2lcolor" style="width:90%;background-color: #fb9678;"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- c3 -->
+            <div class="downarea__right__content__3">
+              <div class="c3L">
+                <!-- left -->
+                <div class="c3left">
+                  <!-- title -->
+                  <div class="contenttitle c3lefttitle">Orders</div>
+                  <!-- category -->
+                  <div class="c3leftword c3leftTword">
+                    <span>#</span>
+                    <span>AVATAR</span>
+                    <span>ID</span>
+                    <span>NAME</span>
+                    <span>PRODUCT</span>
+                    <span>QUANTITY</span>
+                    <span>STATUS</span>
+                  </div>
+                  <!-- peopleinfo -->
+                  <div>
+                    <!-- p1 -->
+                    <div class="c3leftword">
+                      <span>1.</span>
+                      <img src="picelement\p1.jpg"width="62" height="63">
+                      <span>#5469</span>
+                      <span>Louis Stanley</span>
+                      <span>IMax</span>
+                      <span>231</span>
+                      <button class="c3butg">COMPLETE</button>
+                    </div>
+                    <hr size="0.5px" width="100%" color=" #e8e9ef">
+                    <!-- p2 -->
+                    <div class="c3leftword">
+                      <span>2.</span>
+                      <img src="picelement\p2.jpg"width="62" height="63">
+                      <span>#5468</span>
+                      <span>Gregory Dixon</span>
+                      <span>IPad</span>
+                      <span>250</span>
+                      <button class="c3butg">COMPLETE</button>
+                    </div>
+                    <hr size="0.5px" width="100%" color=" #e8e9ef">
+                    <!-- p3 -->
+                    <div class="c3leftword">
+                      <span>3.</span>
+                      <img src="picelement\p3.jpg"width="62" height="63">
+                      <span>#5467</span>
+                      <span>Catherine Dixon</span>
+                      <span>SSD</span>
+                      <span>250</span>
+                      <button class="c3butg">COMPLETE</button>
+                    </div>
+                    <hr size="0.5px" width="100%" color=" #e8e9ef">
+                    <!-- p4 -->
+                    <div class="c3leftword">
+                      <span>4.</span>
+                      <img src="picelement\p4.jpg"width="62" height="63">
+                      <span>#5466</span>
+                      <span>Mary Silva</span>
+                      <span>Magic Mouse</span>
+                      <span>250</span>
+                      <button class="c3buto">PENDING</button>
+                    </div>
+                    <hr size="0.5px" width="100%" color=" #e8e9ef">
+                    <!-- p5 -->
+                    <div class="c3leftword">
+                      <span>5.</span>
+                      <img src="picelement\p5.jpg"width="62" height="63">
+                      <span>#5465</span>
+                      <span>Johnny Stephens</span>
+                      <span>Monitor</span>
+                      <span>250</span>
+                      <button class="c3butg">COMPLETE</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- right -->
+              <div class="c3right">
+                <!-- up -->
+                <div class="c3rup">
+                  <!-- circle -->
+                  <div><img src="picelement\circle.jpg"width="150" height="150"></div>
+                  <!-- ☐ -->
+                  <div class="c3rupword">
+                    <div><span style=" color: #5c6bc0;">■</span><span>Desktop visist</span></div>
+                    <div><span style="color: #ef5350;">■</span><span>Tab visits</span></div>
+                    <div><span style="color: #66bb6a;">■</span><span>Moible visists</span></div>
+                  </div>
+                </div>
+                <!-- down -->
+                <div class="c3rdown">
+                  <div class="AUGU">
+                    <div class="contenttitle august" style="font-size: 17.6px;" >August 2018</div>
+                  </div>
+                  <div class="c3rdownpic"><img src="picelement\august.jpg"width="100%" height="100%"></div>
+                </div>
+              </div>
+            </div>
+            <!-- c4 -->
+            <div class="downarea__right__content__4">
+              <!-- left -->
+              <div class="c4left">
+                <div class="c4leftT">
+                  <div class="contenttitle c4lefttitle">To Do List</div>
+                </div>
+                <div class="c4todo">
+                  <div class="c4todolist">
+                    <!-- todo1 -->
+                    <div class="c4todolistL">
+                      <!-- right -->
+                      <div>
+                        <img src="picelement\todolisthead.png"width="15" height="15">
+                        <span>☐ Conveniently fabricate interactive technology for ....</span>
+                      </div>
+                      <!-- left -->
+                      <div>
+                        <button class="c4but"><img src="picelement\todocorrect.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todopen.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todoremove.png"width="15" height="15"></button>
+                      </div>
+                    </div>
+                    <!-- todo2 -->
+                    <div class="c4todolistL">
+                      <!-- right -->
+                      <div>
+                        <img src="picelement\todolisthead.png"width="15" height="15">
+                        <span>☐ Creating component page</span>
+                      </div>
+                      <!-- left -->
+                      <div>
+                        <button class="c4but"><img src="picelement\todocorrect.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todopen.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todoremove.png"width="15" height="15"></button>
+                      </div>
+                    </div>
+                    <!-- todo3 -->
+                    <div class="c4todolistL">
+                      <!-- right -->
+                      <div>
+                        <img src="picelement\todolisthead.png"width="15" height="15">
+                        <span>☐ Follow back those who follow you</span>
+                      </div>
+                      <!-- left -->
+                      <div>
+                        <button class="c4but"><img src="picelement\todocorrect.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todopen.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todoremove.png"width="15" height="15"></button>
+                      </div>
+                    </div>
+                    <!-- todo4 -->
+                    <div class="c4todolistL">
+                      <!-- right -->
+                      <div>
+                        <img src="picelement\todolisthead.png"width="15" height="15">
+                        <span>☐ Design One page theme</span>
+                      </div>
+                      <!-- left -->
+                      <div>
+                        <button class="c4but"><img src="picelement\todocorrect.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todopen.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todoremove.png"width="15" height="15"></button>
+                      </div>
+                    </div>
+                    <!-- todo5 -->
+                    <div class="c4todolistL">
+                      <!-- right -->
+                      <div>
+                        <img src="picelement\todolisthead.png"width="15" height="15">
+                        <span>☐ Creating component page</span>
+                      </div>
+                      <!-- left -->
+                      <div>
+                        <button class="c4but"><img src="picelement\todocorrect.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todopen.png"width="15" height="15"></button>
+                        <button class="c4but"><img src="picelement\todoremove.png"width="15" height="15"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- right -->
+              <div class="c4right">
+                <div class="c4rightC">
+                  <div class="contenttitle c4righttitle">Live Chat</div>
+                  <!-- chat&input -->
+                  <div>
+                    <div><img src="picelement\chat.jpg"width="100%" height="60%"></div>
+                  </div>
+                  <div class="c4inputsend"><input class="c4input"><button class="c4Rbut"><img src="picelement\send.jpg"width="40" height="40"></button></div>
+                </div>
+              </div>
+            </div>
+            <!-- c5 -->
+            <div class="downarea__right__content__5">
+              <!-- left -->
+              <div class="downarea__right__content__5__left">
+                <div class="c5leftC">
+                  <!-- title -->
+                  <div class="c5lefttitle">
+                    <div class="contenttitle">October 2020</div>
+                    <div>
+                      <button class="c5Lbut"><img src="picelement\left.jpg"width="20" height="20"></button>
+                      <button class="c5Lbut"><img src="picelement\right.jpg"width="20" height="20"></button>
+                    </div>
+                  </div>
+                  <!-- calender -->
+                  <div><img src="picelement\calender.jpg"width="100%" height="80%"></div>
+                </div>
+              </div>
+              <!-- mid -->
+              <div class="downarea__right__content__5__mid">
+                <!-- top -->
+                <div class="c5midpic"><img src="picelement\bar.jpg"width='100%'height="100%"></div>
+                <div class="c5midbut">
+                  <!-- down -->
+                  <div class="c5midbutword">
+                    <div class="c5midbutwordS" style="color: #00bfa5;">
+                      <div>Channel Sell</div>
+                      <div>35%</div>
+                    </div>
+                    <div><img src="picelement\pie.jpg"></div>
+                    <div class="c5midbutwordS" style="color: #5b83de;">
+                      <div>Direct Sell</div>
+                      <div>65%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- right -->
+              <div class="downarea__right__content__5__right">
+                <div class="contenttitle c5rightC">Weather</div>
+              </div>
+            </div>
+          </div>
+          <div class="downarea__right__footer">
+            <div class="underT">
+              <!-- undertitle -->
+              <div class="undertitle">
+                <div>Copyright © 2018 Ela Admin</div>
+                <div>Designed by Colorlib</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+  </html>
+</body>
